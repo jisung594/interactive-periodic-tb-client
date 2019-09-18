@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Table from './Components/Table'
-import './App.css';
+import './App.scss';
 
 class App extends Component {
 
@@ -45,6 +45,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h2>Interactive Periodic Table</h2>
         <Table elements={this.state.elements}/>
       </div>
     );

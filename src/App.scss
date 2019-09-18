@@ -1,0 +1,46 @@
+.App {
+  width: 100%;
+}
+
+.table {
+  // display: grid;
+  // grid-template-columns: repeat(18, auto) 1fr;
+  // grid-template-rows: repeat(9, auto) 1fr;
+  width: 90%;
+  max-width: 100%;
+  margin: 0 auto;
+
+
+
+  .top {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    margin-bottom: 5vw;
+  }
+
+  .bottom {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+  }
+}
+
+.element {
+  width: 5vw;
+
+  h2 {
+    font-size: 0.2em;
+  }
+}
+
+.element-2 {
+  grid-column-start: -2;
+}
+
+.element-5, .element-13 {
+  grid-column-start: 13;
+}
+
+.element-119 {
+  border: dashed;
+  border-width: medium;
+}

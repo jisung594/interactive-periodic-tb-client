@@ -1,12 +1,20 @@
 import React from 'react';
+import '../App.scss';
 
 const Element = (props) => {
   let { element } = props;
 
+
+  let clickHandler = (event) => {
+    console.log(event.target.parentElement.className)
+  }
+
+
   return (
-    <div>
+    <div className={`element element-${element.number}`}>
+      <h4>{element.number}</h4>
       <label>{element.symbol}</label>
-      <h2>{element.name}</h2>
+      <h2 onClick={(e)=>clickHandler(e)}>{element.name}</h2>
     </div>
   )
 }
@@ -14,16 +22,16 @@ const Element = (props) => {
 export default Element;
 
 
-  // id: Number,
-  // name: String,
-  // symbol: String,
-  // appearance: String,
-  // phase: String,
-  // number: Number,
-  // period: Number,
-  // density: Number,
-  // summary: String,
-  // spectral_img: String,
-  // category: String,
-  // discovered_by: String,
-  // named_by: String
+  // id
+  // name
+  // symbol
+  // appearance
+  // phase
+  // number
+  // period
+  // density
+  // summary
+  // spectral_img
+  // category
+  // discovered_by
+  // named_by
