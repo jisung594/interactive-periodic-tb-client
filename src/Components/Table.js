@@ -15,12 +15,15 @@ class Table extends Component {
 
   lanthanideRow = () => {
     let row = this.props.elements.filter(ele => {
-      return ele.number >= 57 && ele.number <= 71
+      // return ele.number >= 57 && ele.number <= 71
+      return ele.category === "lanthanide"
     })
 
     return row.map(elementObj => {
       return <Element key={elementObj.number} element={elementObj}/>
     })
+
+
   }
 
   actinideRow = () => {

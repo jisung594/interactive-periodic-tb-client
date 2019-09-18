@@ -4,17 +4,16 @@ import '../App.scss';
 const Element = (props) => {
   let { element } = props;
 
-
-  let clickHandler = (event) => {
-    console.log(event.target.parentElement.className)
-  }
+  // lanthanide
+  // actinide
+  // alkaline earth metal
 
 
   return (
-    <div className={`element element-${element.number}`}>
-      <h4>{element.number}</h4>
-      <label>{element.symbol}</label>
-      <h2 onClick={(e)=>clickHandler(e)}>{element.name}</h2>
+    <div className={`element element-${element.number} ${element.category.split(" ").join("")}`}>
+      <h5>{element.number}</h5>
+      <h2>{element.symbol}</h2>
+      <label>{element.name}</label>
     </div>
   )
 }
