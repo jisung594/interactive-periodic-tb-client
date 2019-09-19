@@ -4,18 +4,22 @@ import '../App.scss';
 
 class Table extends Component {
   mainElements = () => {
-    let main = this.props.elements.filter(ele => {
-      return ele.number < 57 || (ele.number > 71 && ele.number < 89) || ele.number > 103
+    let newArr = this.props.elements
+    newArr.splice(57,0,{symbol: "__", number: "57-71", category: ""})
+    newArr.splice(88,0,{symbol: "__", number: "89-103", category: ""})
+
+    let main = newArr.filter(ele => {
+      return ele.category !== "lanthanide" && ele.category !== "actinide"
     })
 
     return main.map(elementObj => {
       return <Element key={elementObj.number} element={elementObj}/>
     })
+
   }
 
   lanthanideRow = () => {
     let row = this.props.elements.filter(ele => {
-      // return ele.number >= 57 && ele.number <= 71
       return ele.category === "lanthanide"
     })
 
@@ -28,7 +32,7 @@ class Table extends Component {
 
   actinideRow = () => {
     let row = this.props.elements.filter(ele => {
-      return ele.number >= 89 && ele.number <= 103
+      return ele.category === "actinide"
     })
 
     return row.map(elementObj => {
@@ -39,7 +43,6 @@ class Table extends Component {
 
 
   render() {
-
 
     return (
       <div className="table">

@@ -15,6 +15,7 @@
   .top {
     display: grid;
     grid-template-columns: repeat(18, 1fr);
+    width: 90vw;
     margin-bottom: 5vw;
   }
 
@@ -28,7 +29,7 @@
 
 .element {
   display: grid;
-  grid-template-rows: 5% 80% 15%;
+  grid-template-rows: 10% 75% 15%;
 
   width: 5vw;
   height: 5vw;
@@ -45,7 +46,7 @@
   }
 
   h2 {
-    font-size: 2.5vw;
+    font-size: 2.4vw;
     margin: 0.8vw 0 0 0.3vw;
   }
 
@@ -70,18 +71,48 @@
 
 }
 
-.element-56 {
-  display: inline;
-}
 
-.element-56::after {
-  content: "57-71";
-  display: block;
+.element-56 {
+  // display: inline;
   width: 5vw;
   height: 5vw;
-  border: solid;
-  border-width: medium;
+  // position: relative;
 }
+
+// .element-56::after {
+//   content: "57-71";
+//   font-size: 2vw;
+//   margin: 0.2vw;
+//   display: inline-block;
+//   width: 5vw;
+//   height: 5vw;
+//   background-color: pink;
+//   left: 2vw;
+//   top: -5vw;
+//   grid-column-start: 3;
+//   // grid-row-start: 6;
+// }
+
+// .element-72 {
+//   grid-column: 4/5;
+//   grid-row: 6/7;
+// }
+
+.element-37 {
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.element-38 {
+  grid-column-start: 2;
+  grid-row-start: 5;
+}
+
+.element-88 {
+  grid-column-start: 2;
+  grid-row-start: 7;
+}
+
 
 .lanthanide {
   background-color: red;
