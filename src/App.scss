@@ -1,13 +1,13 @@
 .App {
-  width: 100%;
+  width: 100vw;
 }
 
 .table {
   // display: grid;
   // grid-template-columns: repeat(18, auto) 1fr;
   // grid-template-rows: repeat(9, auto) 1fr;
-  width: 90%;
-  // max-width: 100%;
+  width: 90vw;
+  max-width: 100%;
   margin: 0 auto;
 
 
@@ -16,7 +16,7 @@
     display: grid;
     grid-template-columns: repeat(18, 1fr);
     width: 90vw;
-    margin-bottom: 5vw;
+    margin-bottom: 2vw;
   }
 
   .bottom {
@@ -98,30 +98,77 @@
 //   grid-row: 6/7;
 // }
 
-.element-37 {
-  grid-column-start: 1;
-  grid-row-start: 5;
-}
-
-.element-38 {
-  grid-column-start: 2;
-  grid-row-start: 5;
-}
-
+// .element-37 {
+//   grid-column-start: 1;
+//   grid-row-start: 5;
+// }
+//
+// .element-38 {
+//   grid-column-start: 2;
+//   grid-row-start: 5;
+// }
+//
+// .element-48 {
+//   grid-column-start: 12;
+//   grid-row-start: 5;
+// }
+//
 .element-88 {
   grid-column-start: 2;
   grid-row-start: 7;
 }
 
 
+
+// COLOR CODING
+$red: #FF5252;
+$orange: #FF9800;
+$yellow: #FFEB3B;
+$lightblue: #2196F3;
+$teal: #009688;
+$purple: #9C27B0;
+$green: #4CAF50;
+$cyan: #00BCD4;
+$indigo: #00BCD4;
+$lime: #CDDC39;
+
+
 .lanthanide {
-  background-color: red;
+  background-color: $lime;
 }
 
 .actinide {
-  background-color: blue;
+  background-color: $indigo;
 }
 
 .alkalineearthmetal {
-  background-color: green;
+  background-color: $yellow;
+}
+
+.transitionmetal {
+  background-color: $lightblue;
+}
+
+.post-transitionmetal {
+  background-color: $purple;
+}
+
+.noblegas {
+  background-color: $teal;
+}
+
+.diatomicnonmetal {
+  background-color: $orange;
+}
+
+.metalloid {
+  background-color: $cyan;
+}
+
+.polyatomicnonmetal {
+  background-color: $green;
+}
+
+.alkalimetal {
+  background-color: $red;
 }

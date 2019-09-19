@@ -4,7 +4,7 @@ import '../App.scss';
 
 class Table extends Component {
   mainElements = () => {
-    let newArr = this.props.elements
+    let newArr = this.props.elements.sort((a,b) => a.number - b.number)
     newArr.splice(57,0,{symbol: "__", number: "57-71", category: ""})
     newArr.splice(88,0,{symbol: "__", number: "89-103", category: ""})
 

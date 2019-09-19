@@ -7,10 +7,19 @@ const Element = (props) => {
   // lanthanide
   // actinide
   // alkaline earth metal
+  // transition metal
 
 
   return (
-    <div className={`element element-${element.number} ${element.category.split(" ").join("")}`}>
+    <div className={
+      `element element-${element.number}
+      ${  element.category.includes("unknown, probably ")
+          // ********************
+          ? element.category.replace("unknown, probably ","").split(" ").join("")
+          // ********************
+          : element.category.split(" ").join("")}`
+      }
+    >
       <h5>{element.number}</h5>
       <h2>{element.symbol}</h2>
       <label>{element.name}</label>
