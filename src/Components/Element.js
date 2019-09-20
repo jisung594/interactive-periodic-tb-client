@@ -34,8 +34,8 @@ const Element = (props) => {
             ? element.category.replace("unknown, probably ","").split(" ").join("")
             : element.category.split(" ").join("") }`
         }
-
       onMouseOver={(event)=>mouseHandler(event, element)}>
+      
       <h5>{element.number}</h5>
       <h2>{element.symbol}</h2>
       <label>{element.name}</label>

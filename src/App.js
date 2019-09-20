@@ -31,6 +31,7 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
+    window.scrollTo(0, 0)
   }
 
 
@@ -46,10 +47,11 @@ class App extends Component {
     let eleProfile = document.querySelector(".element-profile")
 
     if (e.target.classList.contains("element") || e.target.parentElement.classList.contains("element")) {
+      eleProfile.style.display = "block"
       eleProfile.innerHTML = `
         <div className="element-profile">
           <h2>${elementObj.name}</h2>
-          <img src=${elementObj.spectral_img}/>
+          <img src=${elementObj.spectral_img} alt="element image">
 
           <span>Summary:</span>
           <p>${elementObj.summary}</p>
@@ -82,16 +84,25 @@ class App extends Component {
           <p>${elementObj.named_by}</p>
         </div>
       `
-    } else {
-      eleProfile.innerHTML = ""
+
+      // window.scrollTo(0, 0)
     }
+  }
+
+  leaveProfile = () => {
+    let eleProfile = document.querySelector(".element-profile")
+
+    eleProfile.innerHTML = ""
+    eleProfile.style = null
   }
 
 
   render() {
     return (
-      <div className="App" onLoad={this.clearContent}>
-        <h2>Interactive Periodic Table.</h2>
+      <div className="App">
+        <div className="header" onMouseOver={this.leaveProfile}>
+          <h2>Interactive Periodic Table.</h2>
+        </div>
         <div className="element-profile"></div>
         <Table elements={this.state.elements} mouseHandler={this.mouseHandler}/>
       </div>

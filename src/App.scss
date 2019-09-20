@@ -9,7 +9,12 @@ body {
 }
 
 .App {
+  display: grid;
+  grid-template-rows: 10vw 90vw;
+  position: relative;
   width: 100vw;
+  height: 100vw;
+
 
   h2 {
     margin: 5vw 0 1vw 5vw;
@@ -20,6 +25,12 @@ body {
   }
 
   .element-profile {
+    display: none;
+    margin: 0 auto;
+    background-color: white;
+    width: 25vw;
+    height: 25vw;
+    position: absolute;
     font-family: $opensans;
 
     h2 {
