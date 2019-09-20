@@ -29,8 +29,8 @@ class App extends Component {
     //   selectedEle: elementObj
     // })
 
+    // let mainContent = document.querySelector(".main-content")
     let tableDiv = document.querySelector(".table")
-    let mainContent = document.querySelector(".main-content")
 
     tableDiv.style.transform = "scale(0.7)"
     tableDiv.style.transformOrigin = "top left"
