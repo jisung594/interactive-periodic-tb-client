@@ -4,28 +4,6 @@ import '../App.scss';
 const Element = (props) => {
   let { element, mouseHandler } = props;
 
-  // let tableDiv = document.querySelector('.table')
-  //
-  // let clearContent = (e) => {
-  //   if (e.target.classList.contains('element')) {
-  //     tableDiv.style.visibility = "hidden"
-  //     // tableDiv.toggle()
-  //   }
-  //
-  //   if (e.target.className === "App") {
-  //     tableDiv.style.visibility = "visible"
-  //     // tableDiv.hide()
-  //   }
-  // }
-
-  // let showContent = (e) => {
-  //   if (e.target.className === "App") {
-  //     tableDiv.style.visibility = "visible"
-  //     // tableDiv.hide()
-  //   }
-  // }
-
-
   return (
     <div
       className={
@@ -35,7 +13,7 @@ const Element = (props) => {
             : element.category.split(" ").join("") }`
         }
       onMouseOver={(event)=>mouseHandler(event, element)}>
-      
+
       <h5>{element.number}</h5>
       <h2>{element.symbol}</h2>
       <label>{element.name}</label>

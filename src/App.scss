@@ -9,47 +9,75 @@ body {
 }
 
 .App {
-  display: grid;
-  grid-template-rows: 10vw 90vw;
-  position: relative;
-  width: 100vw;
+  // display: grid;
+  // grid-template-rows: 10vw 90vw;
+  // position: relative;
+
+  width: 70vw;
   height: 100vw;
 
-
-  h2 {
-    margin: 5vw 0 1vw 5vw;
-    font-family: $josefin;
-    font-size: 3em;
-    letter-spacing: -0.05em;
-    line-height: 1em;
+  .header {
+    h2 {
+      margin: 5vw 0 1vw 2vw;
+      font-family: $josefin;
+      font-size: 3em;
+      letter-spacing: -0.05em;
+      line-height: 1em;
+    }
   }
 
-  .element-profile {
-    display: none;
-    margin: 0 auto;
-    background-color: white;
-    width: 25vw;
-    height: 25vw;
-    position: absolute;
-    font-family: $opensans;
+  .main-content {
+    display: flex;
+    // flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
 
-    h2 {
-      font-size: 2em;
-    }
 
-    span {
-      font-size: 1em;
-      font-weight: 600;
+    .element-profile {
+      display: none;
+      // position: absolute;
+      background-color: black;
+      color: white;
+      width: 40vw;
+      height: auto;
+      font-family: $opensans;
+      top: 10vw;
+      border-radius: 0.5vw;
+      box-shadow: 2vw 2vw 5vw white;
+
+
+      h2 {
+        font-size: 2em;
+        margin: 3vw 2vw 0 2vw;
+      }
+
+      img {
+        margin: 0.5vw 2vw 1vw 2vw;
+      }
+
+      span {
+        font-size: 1em;
+        font-weight: 600;
+        margin: 0.5vw 2vw 1vw 2vw;
+      }
+
+      p {
+        font-size: 0.9em;
+        font-weight: 300;
+        margin: 0.5vw 2vw 1vw 2vw;
+      }
     }
   }
 
 }
 
 
+
 .table {
-  width: 90vw;
+  width: 100vw;
   max-width: 100%;
-  margin: 0 auto;
+  // margin: 0 auto;
+  margin-left: 2vw;
 
 
   .top {
