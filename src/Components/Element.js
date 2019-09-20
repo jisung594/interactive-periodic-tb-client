@@ -35,9 +35,7 @@ const Element = (props) => {
             : element.category.split(" ").join("") }`
         }
 
-      onMouseOver={(event, element)=>mouseHandler(event, element)}
-      // onMouseLeave={(event)=>clearContent(event)}
-    >
+      onMouseOver={(event)=>mouseHandler(event, element)}>
       <h5>{element.number}</h5>
       <h2>{element.symbol}</h2>
       <label>{element.name}</label>

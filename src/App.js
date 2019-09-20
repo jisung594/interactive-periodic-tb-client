@@ -43,53 +43,49 @@ class App extends Component {
   }
 
   mouseHandler = (e, elementObj) => {
-    // if (e.target.classList.contains('element') || e.target.parentElement.classList.contains("element")) {
-    //   this.setState({
-    //     mouseOver: true
-    //   })
-    // } else {
-    //   this.setState({
-    //     mouseOver: false
-    //   })
-    // }
-
     let eleProfile = document.querySelector(".element-profile")
 
-    if (e.target.classList.contains("element")) {
-
+    if (e.target.classList.contains("element") || e.target.parentElement.classList.contains("element")) {
       eleProfile.innerHTML = `
-        <h2>${elementObj.name}</h2>
+        <div className="element-profile">
+          <h2>${elementObj.name}</h2>
+          <img src=${elementObj.spectral_img}/>
+
+          <span>Summary:</span>
+          <p>${elementObj.summary}</p>
+
+          <span>Symbol:</span>
+          <p>${elementObj.symbol}</p>
+
+          <span>Appearance:</span>
+          <p>${elementObj.appearance}</p>
+
+          <span>Phase:</span>
+          <p>${elementObj.phase}</p>
+
+          <span>Number:</span>
+          <p>${elementObj.number}</p>
+
+          <span>Period:</span>
+          <p>${elementObj.period}</p>
+
+          <span>Density:</span>
+          <p>${elementObj.density}</p>
+
+          <span>Category:</span>
+          <p>${elementObj.category}</p>
+
+          <span>Discovered by:</span>
+          <p>${elementObj.discovered_by}</p>
+
+          <span>Named by:</span>
+          <p>${elementObj.named_by}</p>
+        </div>
       `
     } else {
-
       eleProfile.innerHTML = ""
     }
-
   }
-
-
-  // clearContent = (e) => {
-  //
-  //   let tableDiv = document.querySelector('.table')
-  //
-  //   if (!this.state.mouseOver) {
-  //     tableDiv.style.display = "block"
-  //   } else {
-  //
-  //     tableDiv.style.display = "none"
-  //   }
-  //
-  //
-  //   // if (e.target.classList.contains('element') || e.target.parentElement.classList.contains("element")) {
-  //   //   tableDiv.style.visibility = "hidden"
-  //   //   // tableDiv.toggle()
-  //   // }
-  //   //
-  //   // if (!e.target.classList.contains('element') || !e.target.parentElement.classList.contains("element")) {
-  //   //   tableDiv.style.visibility = "visible"
-  //   //   // tableDiv.hide()
-  //   // }
-  // }
 
 
   render() {

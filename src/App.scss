@@ -18,7 +18,22 @@ body {
     letter-spacing: -0.05em;
     line-height: 1em;
   }
+
+  .element-profile {
+    font-family: $opensans;
+
+    h2 {
+      font-size: 2em;
+    }
+
+    span {
+      font-size: 1em;
+      font-weight: 600;
+    }
+  }
+
 }
+
 
 .table {
   width: 90vw;
