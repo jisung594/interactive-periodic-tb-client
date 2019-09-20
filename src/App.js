@@ -25,7 +25,8 @@ class App extends Component {
   // hire@qsimulate.com
 
   state = {
-    elements: []
+    elements: [],
+    mouseOver: false
   }
 
   componentDidMount() {
@@ -41,12 +42,62 @@ class App extends Component {
       }))
   }
 
+  mouseHandler = (e, elementObj) => {
+    // if (e.target.classList.contains('element') || e.target.parentElement.classList.contains("element")) {
+    //   this.setState({
+    //     mouseOver: true
+    //   })
+    // } else {
+    //   this.setState({
+    //     mouseOver: false
+    //   })
+    // }
+
+    let eleProfile = document.querySelector(".element-profile")
+
+    if (e.target.classList.contains("element")) {
+
+      eleProfile.innerHTML = `
+        <h2>${elementObj.name}</h2>
+      `
+    } else {
+
+      eleProfile.innerHTML = ""
+    }
+
+  }
+
+
+  // clearContent = (e) => {
+  //
+  //   let tableDiv = document.querySelector('.table')
+  //
+  //   if (!this.state.mouseOver) {
+  //     tableDiv.style.display = "block"
+  //   } else {
+  //
+  //     tableDiv.style.display = "none"
+  //   }
+  //
+  //
+  //   // if (e.target.classList.contains('element') || e.target.parentElement.classList.contains("element")) {
+  //   //   tableDiv.style.visibility = "hidden"
+  //   //   // tableDiv.toggle()
+  //   // }
+  //   //
+  //   // if (!e.target.classList.contains('element') || !e.target.parentElement.classList.contains("element")) {
+  //   //   tableDiv.style.visibility = "visible"
+  //   //   // tableDiv.hide()
+  //   // }
+  // }
+
 
   render() {
     return (
-      <div className="App">
-        <h2>Interactive Periodic Table</h2>
-        <Table elements={this.state.elements}/>
+      <div className="App" onLoad={this.clearContent}>
+        <h2>Interactive Periodic Table.</h2>
+        <div className="element-profile"></div>
+        <Table elements={this.state.elements} mouseHandler={this.mouseHandler}/>
       </div>
     );
   }
