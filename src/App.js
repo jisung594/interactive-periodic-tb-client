@@ -50,7 +50,6 @@ class App extends Component {
         throw Error(body.message)
       }
       return body
-    }
   }
 
   mouseHandler = (e, elementObj) => {
