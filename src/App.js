@@ -36,7 +36,7 @@ class App extends Component {
 
 
 
-  callBackend = () => {
+  callBackend = async () => {
     // fetch('/api/elements')
       // .then(res => res.json())
       // .then(data => this.setState({
