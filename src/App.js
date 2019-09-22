@@ -17,7 +17,8 @@ class App extends Component {
 
 
   callBackend = () => {
-    fetch('/api/elements')
+    // fetch('/api/elements')
+    fetch('https://interactive-periodic-tb-server.herokuapp.com/api/elements')
       .then(res => res.json())
       .then(data => this.setState({
         elements: data
