@@ -31,5 +31,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://interactive-periodic-tb-server.herokuapp.com/"
+  "proxy": "https://interactive-periodic-tb-client.herokuapp.com/"
 }
