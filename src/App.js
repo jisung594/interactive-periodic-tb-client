@@ -12,8 +12,9 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
-      .then(res => res.json())
-      .then(data => console.log(data))
+      .then(res => this.setState({
+        elements: res
+      }))
       .catch(err => console.log(err))
   }
 
@@ -51,7 +52,7 @@ class App extends Component {
       return body
 
       // "body" is actually an error
-      // something is wrong with the fetch or whatever's being received on frontend
+      // something is wrong with the fetch or whatever's being received
   }
 
 
