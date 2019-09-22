@@ -35,8 +35,10 @@ class App extends Component {
 
   callBackend = () => {
     fetch('/api/elements')
-      // .then(res => res.json())
-      .then(data => console.log(data))
+      .then(res => res.json())
+      .then(data => this.setState({
+        elements: data
+      }))
   }
 
   mouseHandler = (e, elementObj) => {
