@@ -12,8 +12,9 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
-      .then(res => console.log(res.text()))
-    .catch(err => console.log(err))
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(err => console.log(err))
   }
 
 
@@ -42,7 +43,7 @@ class App extends Component {
       // }))
 
       const response = await fetch('/api/elements')
-      const body = await response
+      const body = await response.json()
 
       if (response.status !== 200) {
         throw Error(body.message)
