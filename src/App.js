@@ -12,7 +12,6 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
-    console.log(this.state.elements);
     // window.scrollTo(0, 0)
   }
 
@@ -20,9 +19,7 @@ class App extends Component {
   callBackend = () => {
     fetch('/api/elements')
       .then(res => res.json())
-      .then(data => this.setState({
-        elements: data
-      }))
+      .then(data => console.log(data))
   }
 
   mouseHandler = (e, elementObj) => {
