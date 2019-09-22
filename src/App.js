@@ -12,9 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
-      .then(res => this.setState({
-        elements: res
-      }))
+      .then(res => console.log(res))
     .catch(err => console.log(err))
   }
 
