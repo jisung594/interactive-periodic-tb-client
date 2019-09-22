@@ -42,12 +42,15 @@ class App extends Component {
       // }))
 
       const response = await fetch('/api/elements')
-      const body = await response.json()
+      const body = await response
 
       if (response.status !== 200) {
         throw Error(body.message)
       }
       return body
+
+      // "body" is actually an error
+      // something is wrong with the fetch or whatever's being received on frontend
   }
 
 
