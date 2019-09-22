@@ -12,6 +12,7 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
+    console.log(this.state.elements);
     // window.scrollTo(0, 0)
   }
 
