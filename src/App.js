@@ -12,7 +12,9 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
-      .then(res => console.log(res))
+      .then(res => this.setState({
+        elements: res[0]
+      }))
     .catch(err => console.log(err))
   }
 
@@ -49,6 +51,7 @@ class App extends Component {
       }
       return body
   }
+
 
   mouseHandler = (e, elementObj) => {
     let tableDiv = document.querySelector(".table")
