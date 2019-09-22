@@ -12,7 +12,10 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
-    // window.scrollTo(0, 0)
+      .then(res => this.setState({
+        elements: res
+      }))
+    .catch(err => console.log(err))
   }
 
 
@@ -34,19 +37,23 @@ class App extends Component {
 
 
   callBackend = () => {
-    fetch('/api/elements')
-      .then(res => res.json())
-      .then(data => this.setState({
-        elements: data
-      }))
+    // fetch('/api/elements')
+      // .then(res => res.json())
+      // .then(data => this.setState({
+      //   elements: data
+      // }))
+
+      const response = await fetch('/api/elements')
+      const body = await response.json()
+
+      if (response.status !== 200) {
+        throw Error(body.message)
+      }
+      return body
+    }
   }
 
   mouseHandler = (e, elementObj) => {
-    // this.setState({
-    //   selectedEle: elementObj
-    // })
-
-    // let mainContent = document.querySelector(".main-content")
     let tableDiv = document.querySelector(".table")
 
     tableDiv.style.transform = "scale(0.7)"
