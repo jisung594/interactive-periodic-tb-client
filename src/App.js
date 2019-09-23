@@ -12,21 +12,14 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
-      .then(res => console.log(res))
+      .then(res => this.setState({
+        elements: res
+      }))
       .catch(err => console.log(err))
   }
 
 
   callBackend = async () => {
-    // fetch('/api/elements', {
-    // fetch('https://interactive-periodic-tb-server.herokuapp.com/api/elements', {
-    //   method: "GET",
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //   }
-    // })
-
       const response = await fetch('https://interactive-periodic-tb-server.herokuapp.com/api/elements')
       const body = await response.json()
 
