@@ -15,8 +15,7 @@ class App extends Component {
       // .then(res => this.setState({
       //   elements: res
       // }))
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+      // .catch(err => console.log(err))
   }
 
 
@@ -27,6 +26,7 @@ class App extends Component {
         'Content-Type': 'application/json',
       }
     })
+    .then(res => console.log(res))
       // .then(res => res.json())
       // .then(data => this.setState({
       //   elements: data
