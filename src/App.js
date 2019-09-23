@@ -15,7 +15,11 @@ class App extends Component {
       // .then(res => this.setState({
       //   elements: res
       // }))
-      // .catch(err => console.log(err))
+      .then(res => res.json())
+      .then(data => this.setState({
+        elements: data
+      }))
+      .catch(err => console.log(err))
   }
 
 
@@ -26,8 +30,6 @@ class App extends Component {
         'Content-Type': 'application/json',
       }
     })
-    .then(res => res.json())
-    .then(data => console.log(data))
       // .then(res => res.json())
       // .then(data => this.setState({
       //   elements: data
