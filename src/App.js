@@ -20,7 +20,8 @@ class App extends Component {
 
 
   callBackend = async () => {
-    fetch('/api/elements', {
+    // fetch('/api/elements', {
+    fetch('https://interactive-periodic-tb-server.herokuapp.com/api/elements', {
       method: "GET",
       headers: {
         'Accept': 'application/json',
