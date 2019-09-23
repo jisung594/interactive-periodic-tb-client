@@ -19,23 +19,6 @@ class App extends Component {
   }
 
 
-
-// --------------------------
-// There are 2 ways to fix this.
-//
-// Manually run npm run build and add bundle.js to git.
-// Add postinstall task to package.json which executs npm run build task.
-
-// *** try these two things for both front and callBackend
-
-// 1. heroku npm run build
-// 2. (in package.json under "scripts") "postinstall": "npm run build"
-// --------------------------
-
-
-
-
-
   callBackend = async () => {
     // fetch('/api/elements')
       // .then(res => res.json())
@@ -43,7 +26,10 @@ class App extends Component {
       //   elements: data
       // }))
 
-      const response = await fetch('/api/elements')
+      const response = await fetch('/api/elements',{headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+  }})
       const body = await response.json()
 
       if (response.status !== 200) {
