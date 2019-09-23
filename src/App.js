@@ -25,15 +25,12 @@ class App extends Component {
 
   callBackend = async () => {
     fetch('/api/elements', {
+      method: "GET",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       }
     })
-      // .then(res => res.json())
-      // .then(data => this.setState({
-      //   elements: data
-      // }))
 
       // const response = await fetch('/api/elements')
       // const body = await response.json()
