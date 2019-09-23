@@ -20,22 +20,24 @@ class App extends Component {
 
 
   callBackend = async () => {
-    // fetch('/api/elements')
+    fetch('/api/elements', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    })
       // .then(res => res.json())
       // .then(data => this.setState({
       //   elements: data
       // }))
 
-      const response = await fetch('/api/elements',{headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-  }})
-      const body = await response.json()
-
-      if (response.status !== 200) {
-        throw Error(body.message)
-      }
-      return body
+      // const response = await fetch('/api/elements')
+      // const body = await response.json()
+      //
+      // if (response.status !== 200) {
+      //   throw Error(body.message)
+      // }
+      // return body
 
       // "body" is actually an error
       // something is wrong with the fetch or whatever's being received
