@@ -12,12 +12,8 @@ class App extends Component {
 
   componentDidMount() {
     this.callBackend()
-      // .then(res => this.setState({
-      //   elements: res
-      // }))
-      .then(res => res.json())
-      .then(data => this.setState({
-        elements: data
+      .then(res => this.setState({
+        elements: res
       }))
       .catch(err => console.log(err))
   }
