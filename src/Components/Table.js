@@ -70,11 +70,11 @@ class Table extends Component {
   render() {
     return (
       <div className="table">
+        {this.state.loaded ? null : <h2>Loading elements...</h2>}
         <div className="top">
           {this.mainElements()}
         </div>
         <div className="bottom">
-          {this.state.loaded ? null : <h2>Loading elements...</h2>}
           {this.lanthanideRow()}
           {this.actinideRow()}
         </div>
