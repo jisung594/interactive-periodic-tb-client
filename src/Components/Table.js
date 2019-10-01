@@ -8,12 +8,6 @@ class Table extends Component {
     loaded: false
   }
 
-  loaded = () => {
-    this.setState({
-      loaded: true
-    })
-  }
-
 
 
   mainElements = () => {
@@ -30,7 +24,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={this.loaded}
+        onLoad={this.setState({ loaded: true })}
       />
     })
   }
@@ -45,7 +39,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={this.loaded}
+        onLoad={this.setState({ loaded: true })}
       />
     })
   }
@@ -60,7 +54,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={this.loaded}
+        onLoad={this.setState({ loaded: true })}
       />
     })
   }
