@@ -15,7 +15,7 @@ const Element = (props) => {
       onMouseOver={(event)=>mouseHandler(event, element)}
     >
 
-      <h5 onLoad={loaded()}>{element.number}</h5>
+      <h5 onLoad={()=>loaded()}>{element.number}</h5>
       <h2>{element.symbol}</h2>
       <label>{element.name}</label>
     </div>
