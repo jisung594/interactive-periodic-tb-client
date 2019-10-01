@@ -21,8 +21,8 @@ class Table extends Component {
 
   mainElements = () => {
     let newArr = this.props.elements.sort((a,b) => a.number - b.number)
-    newArr.splice(57,0,{id: "lanthanide", name: "", symbol: "**", number: "57-71", category: ""})
-    newArr.splice(88,0,{id: "actinide", name: "", symbol: "**", number: "89-103", category: ""})
+    newArr.splice(57,0,{name: "", symbol: "**", number: "200", category: ""})
+    newArr.splice(88,0,{name: "", symbol: "**", number: "201", category: ""})
 
     let main = newArr.filter(ele => {
       return ele.category !== "lanthanide" && ele.category !== "actinide"
