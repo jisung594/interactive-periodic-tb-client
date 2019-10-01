@@ -13,10 +13,9 @@ const Element = (props) => {
             : element.category.split(" ").join("") }`
         }
       onMouseOver={(event)=>mouseHandler(event, element)}
-      onLoad={()=>loaded()}
     >
 
-      <h5>{element.number}</h5>
+      <h5 onLoad={()=>loaded()}>{element.number}</h5>
       <h2>{element.symbol}</h2>
       <label>{element.name}</label>
     </div>
