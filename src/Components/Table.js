@@ -4,6 +4,17 @@ import '../App.scss';
 
 class Table extends Component {
 
+  state = {
+    loaded: false
+  }
+
+  loaded = () => {
+    this.setState({
+      loaded: true
+    })
+  }
+
+
 
   mainElements = () => {
     let newArr = this.props.elements.sort((a,b) => a.number - b.number)
@@ -15,7 +26,12 @@ class Table extends Component {
     })
 
     return main.map(elementObj => {
-      return <Element key={elementObj.number} element={elementObj} mouseHandler={this.props.mouseHandler}/>
+      return <Element
+        key={elementObj.number}
+        element={elementObj}
+        mouseHandler={this.props.mouseHandler}
+        onLoad={this.loaded}
+      />
     })
   }
 
@@ -25,7 +41,12 @@ class Table extends Component {
     })
 
     return row.map(elementObj => {
-      return <Element key={elementObj.number} element={elementObj} mouseHandler={this.props.mouseHandler}/>
+      return <Element
+        key={elementObj.number}
+        element={elementObj}
+        mouseHandler={this.props.mouseHandler}
+        onLoad={this.loaded}
+      />
     })
   }
 
@@ -35,7 +56,12 @@ class Table extends Component {
     })
 
     return row.map(elementObj => {
-      return <Element key={elementObj.number} element={elementObj} mouseHandler={this.props.mouseHandler}/>
+      return <Element
+        key={elementObj.number}
+        element={elementObj}
+        mouseHandler={this.props.mouseHandler}
+        onLoad={this.loaded}
+      />
     })
   }
 
@@ -48,6 +74,7 @@ class Table extends Component {
           {this.mainElements()}
         </div>
         <div className="bottom">
+          {this.state.loaded ? null : <h2>Loading elements...</h2>}
           {this.lanthanideRow()}
           {this.actinideRow()}
         </div>
