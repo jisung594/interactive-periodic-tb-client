@@ -21,8 +21,8 @@ class Table extends Component {
 
   mainElements = () => {
     let newArr = this.props.elements.sort((a,b) => a.number - b.number)
-    newArr.splice(57,0,{name: "", symbol: "**", number: "57-71", category: ""})
-    newArr.splice(89,0,{name: "", symbol: "**", number: "89-103", category: ""})
+    newArr.splice(57,0,{_id: 200, name: "", symbol: "**", number: "57-71", category: ""})
+    newArr.splice(89,0,{_id: 201, name: "", symbol: "**", number: "89-103", category: ""})
 
     let main = newArr.filter(ele => {
       return ele.category !== "lanthanide" && ele.category !== "actinide"
@@ -32,7 +32,7 @@ class Table extends Component {
 
     return main.map(elementObj => {
       return <Element
-        key={elementObj.number}
+        key={elementObj["_id"]}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
       />
