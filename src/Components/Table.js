@@ -28,8 +28,6 @@ class Table extends Component {
       return ele.category !== "lanthanide" && ele.category !== "actinide"
     })
 
-    console.log(main)
-
     if (main.length === 91) {
       return main.map(elementObj => {
         return <Element
