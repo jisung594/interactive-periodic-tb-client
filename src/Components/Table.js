@@ -10,7 +10,7 @@ class Table extends Component {
 
   loaded = () => {
     this.setState({
-      loaded: true
+      loaded: !this.state.loaded
     })
   }
 
