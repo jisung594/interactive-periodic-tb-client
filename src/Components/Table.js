@@ -64,7 +64,7 @@ class Table extends Component {
   render() {
     return (
       <div className="table">
-        {!this.state.loaded ? <h2>Loading elements...</h2> : null}
+        <h2 style={this.state.loaded ? {display: "none"} : {display: "block"}}>Loading elements...</h2>
         <div className="top">
           {this.mainElements()}
         </div>
