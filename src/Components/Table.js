@@ -30,13 +30,15 @@ class Table extends Component {
 
     console.log(main)
 
-    return main.map(elementObj => {
-      return <Element
-        key={elementObj["_id"]}
-        element={elementObj}
-        mouseHandler={this.props.mouseHandler}
-      />
-    })
+    if (main.length === 91) {
+      return main.map(elementObj => {
+        return <Element
+          key={elementObj["_id"]}
+          element={elementObj}
+          mouseHandler={this.props.mouseHandler}
+        />
+      })
+    }
   }
 
   lanthanideRow = () => {
