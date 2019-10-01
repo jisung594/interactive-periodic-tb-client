@@ -8,6 +8,11 @@ class Table extends Component {
     loaded: false
   }
 
+  loaded = () => {
+    this.setState({
+      loaded: true
+    })
+  }
 
 
   mainElements = () => {
@@ -24,7 +29,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={()=>this.setState({ loaded: true })}
+        loaded={this.loaded}
       />
     })
   }
@@ -39,7 +44,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={()=>this.setState({ loaded: true })}
+        loaded={this.loaded}
       />
     })
   }
@@ -54,7 +59,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={()=>this.setState({ loaded: true })}
+        loaded={this.loaded}
       />
     })
   }
@@ -64,7 +69,7 @@ class Table extends Component {
   render() {
     return (
       <div className="table">
-        <h2 style={this.state.loaded ? {display: "none"} : {display: "block"}}>Loading elements...</h2>
+        {!this.state.loaded ? <h2>Loading elements...</h2> : null}
         <div className="top">
           {this.mainElements()}
         </div>

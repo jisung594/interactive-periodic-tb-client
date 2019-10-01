@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.scss';
 
 const Element = (props) => {
-  let { element, mouseHandler } = props;
+  let { element, mouseHandler, loaded } = props;
 
   return (
     <div
@@ -12,7 +12,9 @@ const Element = (props) => {
             ? element.category.replace("unknown, probably ","").split(" ").join("")
             : element.category.split(" ").join("") }`
         }
-      onMouseOver={(event)=>mouseHandler(event, element)}>
+      onMouseOver={(event)=>mouseHandler(event, element)}
+      onLoad={()=>loaded()}
+    >
 
       <h5>{element.number}</h5>
       <h2>{element.symbol}</h2>
