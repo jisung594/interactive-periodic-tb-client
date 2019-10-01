@@ -24,7 +24,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={this.setState({ loaded: true })}
+        onLoad={()=>this.setState({ loaded: true })}
       />
     })
   }
@@ -39,7 +39,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={this.setState({ loaded: true })}
+        onLoad={()=>this.setState({ loaded: true })}
       />
     })
   }
@@ -54,7 +54,7 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        onLoad={this.setState({ loaded: true })}
+        onLoad={()=>this.setState({ loaded: true })}
       />
     })
   }
