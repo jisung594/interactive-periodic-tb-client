@@ -21,8 +21,8 @@ class Table extends Component {
 
   mainElements = () => {
     let newArr = this.props.elements.sort((a,b) => a.number - b.number)
-    newArr.splice(57,0,{name: "", symbol: "**", number: "200", category: ""})
-    newArr.splice(88,0,{name: "", symbol: "**", number: "201", category: ""})
+    newArr.splice(57,0,{name: "", symbol: "**", number: "200", category: "lanthanide"})
+    newArr.splice(88,0,{name: "", symbol: "**", number: "201", category: "actinide"})
 
     let main = newArr.filter(ele => {
       return ele.category !== "lanthanide" && ele.category !== "actinide"
@@ -39,7 +39,7 @@ class Table extends Component {
 
   lanthanideRow = () => {
     let row = this.props.elements.filter(ele => {
-      return ele.category === "lanthanide"
+      return ele.category === "lanthanide" && ele.name
     })
 
     return row.map(elementObj => {
@@ -53,7 +53,7 @@ class Table extends Component {
 
   actinideRow = () => {
     let row = this.props.elements.filter(ele => {
-      return ele.category === "actinide"
+      return ele.category === "actinide" && ele.name
     })
 
     return row.map(elementObj => {
