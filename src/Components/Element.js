@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.scss';
 
 const Element = (props) => {
-  let { element, mouseHandler, loaded } = props;
+  let { element, mouseHandler } = props;
 
   return (
     <div
@@ -15,7 +15,7 @@ const Element = (props) => {
       onMouseOver={(event)=>mouseHandler(event, element)}
     >
 
-      <h5 onLoad={()=>loaded()}>{element.number}</h5>
+      <h5>{element.number}</h5>
       <h2>{element.symbol}</h2>
       <label>{element.name}</label>
     </div>

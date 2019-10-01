@@ -3,7 +3,6 @@ import Element from './Element'
 import '../App.scss';
 
 class Table extends Component {
-
   state = {
     loaded: false
   }
@@ -12,9 +11,12 @@ class Table extends Component {
     this.setState({
       loaded: !this.state.loaded
     })
-
-    console.log(this.state.loaded)
   }
+
+  componentDidMount() {
+    this.loaded()
+  }
+
 
 
   mainElements = () => {
@@ -31,7 +33,6 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        loaded={this.loaded}
       />
     })
   }
@@ -46,7 +47,6 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        loaded={this.loaded}
       />
     })
   }
@@ -61,7 +61,6 @@ class Table extends Component {
         key={elementObj.number}
         element={elementObj}
         mouseHandler={this.props.mouseHandler}
-        loaded={this.loaded}
       />
     })
   }
